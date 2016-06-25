@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.uiyllong.ssh.entities.Employee" table="ssh_employee">
+		<id name="id">
+			<generator class="native"/>
+		</id>
+		<property name="lastName"/>
+		<property name="email"/>
+		<property name="birth"/>
+		<property name="createTime"/>
+		
+		<many-to-one name="department" class="com.uiyllong.ssh.entities.Department">
+			<column name="department_id"/>
+		</many-to-one>
+	</class>
+</hibernate-mapping>
